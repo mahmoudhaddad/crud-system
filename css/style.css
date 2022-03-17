@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+:root {
+  --background: #fff;
+  --title: #000;
+  --input-bg: lightgray;
+  --input-color: #111;
+  --input-color-onfocus: #fff;
+  --input-bg-onfocus: gray;
+  --outputs: #000;
+}
+
+.dark {
+  --background: #222;
+  --title: #fff;
+  --input-bg: #111;
+  --input-color: #fff;
+  --input-color-onfocus: #fff;
+  --input-bg-onfocus: #000;
+  --outputs: #fff;
+}
+
+body {
+  background-color: var(--background);
+  transition: 0.2s linear;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+/*mode*/
+
+.mode {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  color: var(--title);
+  font-size: 36px;
+  cursor: pointer;
+  transition: 0.5s linear;
+}
+
+/*head*/
+
+.head {
+  text-align: center;
+  padding: 50px;
+  color: var(--title);
+}
+
+.head h1 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.head p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*inputs*/
+
+input {
+  background-color: var(--input-bg);
+  padding: 10px 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 5px;
+  color: var(--input-color);
+  transition: 0.2s linear;
+}
+
+.inputs input:focus,
+.search input:focus {
+  color: var(--input-color-onfocus);
+  background-color: var(--input-bg-onfocus);
+  transform: scale(1.02);
+}
+
+.inputs > input,
+.search input {
+  width: 100%;
+}
+
+.inputs .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inputs .price input {
+  width: 20%;
+  text-align: center;
+}
+
+.inputs .price .total {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+
+.inputs .price .total::before {
+  content: "total:";
+}
+
+button {
+  padding: 5px;
+  background-color: lightskyblue;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.inputs button {
+  width: 100%;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+/*search*/
+
+.search .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search button {
+  width: 45%;
+}
+
+/*delete*/
+
+.delete button {
+  width: 100%;
+}
+
+/*outputs*/
+
+.outputs table {
+  margin: auto;
+  width: 80%;
+  overflow-x: auto;
+}
+
+.outputs table td,
+.outputs table th {
+  text-align: center;
+  color: var(--outputs);
+  padding: 10px;
+}
+
+.outputs table th {
+  text-transform: uppercase;
+}
